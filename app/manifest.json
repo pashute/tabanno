@@ -8,5 +8,16 @@
     "default_popup": "main.html",
     "default_title": "Tabanno - tab organizer"
   },
-  "permissions": ["activeTab", "tabs"]
+  "permissions": ["activeTab", "tabs"],
+  "background": {
+    "scripts": ["thirdParty/jquery-2.0.3.js", "background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://website*"],
+      "js": ["thirdParty/jquery.1.10.2.min.js", "script.js"],
+      "css": ["css/style.css"],
+      "run_at": "document_end"
+    }
+  ]
 }
